@@ -1,0 +1,223 @@
+.todo {
+    max-width: 640px;
+    margin: 2rem auto;
+}
+
+.todo__title {
+    text-align: center;
+}
+
+.todo__form {
+    padding: 1.5rem 1rem;
+    margin-top: 2rem;
+    border-top: 1px solid #BDC3C7;
+    border-bottom: 1px solid #BDC3C7;
+    background-color: #ECF0F1;
+}
+
+.todo__form-fields {
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.todo__form-fieldset {
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todo__form-fieldset input,
+.todo__form-fieldset textarea {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: .25rem;
+    padding: .5rem 1rem;
+}
+
+.todo__form-btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+/* TODO ITEM
+------------------------------------------------------------------------- */
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.todo-list__item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    animation-duration: 0.75s;
+    animation-delay: 0.5s;
+    animation-name: animate-fade;
+    animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+    animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+    from {
+        opacity: 0;
+        filter: brightness(3) saturate(3);
+        transform: scale(0.5, 0.5);
+    }
+
+    to {
+        opacity: 1;
+        filter: brightness(1) saturate(1);
+        transform: scale(1, 1);
+    }
+}
+
+.todo-list__content {
+    padding: 1rem 1.5rem;
+}
+
+.todo-list__desc,
+.todo-list__date {
+    margin-top: 1.2rem;
+}
+
+.todo-list__date {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    color: #95A5A6;
+}
+
+.no-todo {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* CONTROLS
+------------------------------------------------------------------------- */
+.controls {
+    height: 100%;
+    flex-direction: column;
+    gap: 0.25rem;
+    justify-content: flex-start;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.btn-icon {
+    aspect-ratio: 1;
+    width: 3.2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    color: #7F8C8D;
+}
+
+.btn-icon--complete:hover {
+    color: #2ECC71;
+}
+
+.btn-icon--edit:hover {
+    color: #3498DB;
+}
+
+.btn-icon--delete:hover {
+    color: #E74C3C;
+}
+
+/* BUTTONS
+------------------------------------------------------------------------- */
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 300ms ease-in-out;
+}
+
+.btn--add {
+    background-color: #2980B9;
+}
+
+.btn--update {
+    background-color: #16A085;
+}
+
+/* FILTER
+------------------------------------------------------------------------- */
+.filter {
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.filter select {
+    padding: .25rem .5rem;
+    appearance: none;
+    background-color: white;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"><path fill="%23333" d="M0 2l4 4 4-4h-8z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 0.7em top 50%;
+    padding-right: 1.5em;
+}
+
+/* UTILS
+---------------------------------------------------------------- */
+.flex-container {
+    display: flex;
+}
+
+.mt-2rem {
+    margin-top: 2rem;
+}
+
+.vh-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.done {
+    position: relative;
+    text-decoration: line-through;
+}
+
+.done::before {
+    content: 'Done!';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -1.4rem;
+    left: -1.4rem;
+    width: 3rem;
+    aspect-ratio: 1;
+    background-color: #1ABC9C;
+    border-radius: 50%;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-style: italic;
+    color: #e74c3c;
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;800&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff;
+    color: #2C3E50;
+    font-family: 'Poppins', sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+}
+
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font: inherit;
+}
+
+input,
+select,
+textarea {
+    border: 2px solid #2C3E50;
+    background-color: white;
+    border-radius: 0.25rem;
+}
+
+ul li {
+    list-style-type: none;
+}
