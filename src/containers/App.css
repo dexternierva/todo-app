@@ -8,11 +8,11 @@
 }
 
 .todo__form {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem;
     margin-top: 2rem;
-    border-top: 1px solid #BDC3C7;
-    border-bottom: 1px solid #BDC3C7;
+    border: 1px solid #BDC3C7;
     background-color: #ECF0F1;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.06);
 }
 
 .todo__form-fields {
@@ -54,13 +54,14 @@
 .todo-list__item {
     display: flex;
     justify-content: space-between;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid #BDC3C7;
 
     animation-duration: 0.75s;
     animation-delay: 0.5s;
     animation-name: animate-fade;
     animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
     animation-fill-mode: backwards;
+    cursor: move;
 }
 
 @keyframes animate-fade {
@@ -106,7 +107,7 @@
     flex-direction: column;
     gap: 0.25rem;
     justify-content: flex-start;
-    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #BDC3C7;
 }
 
 .btn-icon {

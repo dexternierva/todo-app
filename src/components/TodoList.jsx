@@ -25,7 +25,7 @@ function TodoList({ todos, toggleTodo, handleDelete, handleEdit, filter }) {
                         );
                     })
             ) : (
-                <h3 className="no-todo">No Todos! 🤔</h3>
+                <h3 className="no-todo">No Todos! 👋</h3>
             )}
         </ul>
     );

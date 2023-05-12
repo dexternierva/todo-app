@@ -16,7 +16,16 @@ function App() {
     const titleInputRef = useRef(null);
     const descInputRef = useRef(null);
     const dateInputRef = useRef(null);
-    const [todos, setTodos] = useState([]);
+    //const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState(() => {
+        const localValue = localStorage.getItem("myTodos")
+        if (localValue === null) return []
+        return JSON.parse(localValue);
+    });
+
+    useEffect(() => {
+        localStorage.setItem("myTodos", JSON.stringify(todos));
+    }, [todos]);
 
     // HANDLE SUBMIT AND UPDATE
     const handleSubmit = function (event) {
@@ -57,6 +66,8 @@ function App() {
                             desc: desc,
                             date: date,
                         };
+                    } else {
+                        return todo;
                     }
                 });
             });
@@ -139,6 +150,7 @@ function App() {
                 handleDelete={handleDelete}
                 handleEdit={handleEdit}
                 filter={filter}
+                setTodos={setTodos}
             />
         </div>
     );
